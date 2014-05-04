@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		528DE9C01915F214007302C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528DE9BF1915F214007302C5 /* Foundation.framework */; };
+		528DE9C21915F214007302C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528DE9C11915F214007302C5 /* CoreGraphics.framework */; };
+		528DE9C41915F214007302C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528DE9C31915F214007302C5 /* UIKit.framework */; };
+		528DE9CA1915F214007302C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 528DE9C81915F214007302C5 /* InfoPlist.strings */; };
+		528DE9CC1915F214007302C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 528DE9CB1915F214007302C5 /* main.m */; };
+		528DE9D01915F214007302C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 528DE9CF1915F214007302C5 /* AppDelegate.m */; };
+		528DE9D21915F214007302C5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528DE9D11915F214007302C5 /* Images.xcassets */; };
+		528DE9D91915F214007302C5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528DE9D81915F214007302C5 /* XCTest.framework */; };
+		528DE9DA1915F214007302C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528DE9BF1915F214007302C5 /* Foundation.framework */; };
+		528DE9DB1915F214007302C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528DE9C31915F214007302C5 /* UIKit.framework */; };
+		528DE9E31915F214007302C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 528DE9E11915F214007302C5 /* InfoPlist.strings */; };
+		528DE9E51915F214007302C5 /* WordReviewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 528DE9E41915F214007302C5 /* WordReviewTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		528DE9DC1915F214007302C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528DE9B41915F214007302C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 528DE9BB1915F214007302C5;
+			remoteInfo = WordReview;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		528DE9BC1915F214007302C5 /* WordReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		528DE9BF1915F214007302C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		528DE9C11915F214007302C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		528DE9C31915F214007302C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		528DE9C71915F214007302C5 /* WordReview-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordReview-Info.plist"; sourceTree = "<group>"; };
+		528DE9C91915F214007302C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		528DE9CB1915F214007302C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		528DE9CD1915F214007302C5 /* WordReview-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordReview-Prefix.pch"; sourceTree = "<group>"; };
+		528DE9CE1915F214007302C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		528DE9CF1915F214007302C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		528DE9D11915F214007302C5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		528DE9D71915F214007302C5 /* WordReviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordReviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		528DE9D81915F214007302C5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		528DE9E01915F214007302C5 /* WordReviewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordReviewTests-Info.plist"; sourceTree = "<group>"; };
+		528DE9E21915F214007302C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		528DE9E41915F214007302C5 /* WordReviewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordReviewTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		528DE9B91915F214007302C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				528DE9C21915F214007302C5 /* CoreGraphics.framework in Frameworks */,
+				528DE9C41915F214007302C5 /* UIKit.framework in Frameworks */,
+				528DE9C01915F214007302C5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		528DE9D41915F214007302C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				528DE9D91915F214007302C5 /* XCTest.framework in Frameworks */,
+				528DE9DB1915F214007302C5 /* UIKit.framework in Frameworks */,
+				528DE9DA1915F214007302C5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		528DE9B31915F214007302C5 = {
+			isa = PBXGroup;
+			children = (
+				528DE9C51915F214007302C5 /* WordReview */,
+				528DE9DE1915F214007302C5 /* WordReviewTests */,
+				528DE9BE1915F214007302C5 /* Frameworks */,
+				528DE9BD1915F214007302C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		528DE9BD1915F214007302C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				528DE9BC1915F214007302C5 /* WordReview.app */,
+				528DE9D71915F214007302C5 /* WordReviewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		528DE9BE1915F214007302C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				528DE9BF1915F214007302C5 /* Foundation.framework */,
+				528DE9C11915F214007302C5 /* CoreGraphics.framework */,
+				528DE9C31915F214007302C5 /* UIKit.framework */,
+				528DE9D81915F214007302C5 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		528DE9C51915F214007302C5 /* WordReview */ = {
+			isa = PBXGroup;
+			children = (
+				528DE9CE1915F214007302C5 /* AppDelegate.h */,
+				528DE9CF1915F214007302C5 /* AppDelegate.m */,
+				528DE9D11915F214007302C5 /* Images.xcassets */,
+				528DE9C61915F214007302C5 /* Supporting Files */,
+			);
+			path = WordReview;
+			sourceTree = "<group>";
+		};
+		528DE9C61915F214007302C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				528DE9C71915F214007302C5 /* WordReview-Info.plist */,
+				528DE9C81915F214007302C5 /* InfoPlist.strings */,
+				528DE9CB1915F214007302C5 /* main.m */,
+				528DE9CD1915F214007302C5 /* WordReview-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		528DE9DE1915F214007302C5 /* WordReviewTests */ = {
+			isa = PBXGroup;
+			children = (
+				528DE9E41915F214007302C5 /* WordReviewTests.m */,
+				528DE9DF1915F214007302C5 /* Supporting Files */,
+			);
+			path = WordReviewTests;
+			sourceTree = "<group>";
+		};
+		528DE9DF1915F214007302C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				528DE9E01915F214007302C5 /* WordReviewTests-Info.plist */,
+				528DE9E11915F214007302C5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		528DE9BB1915F214007302C5 /* WordReview */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 528DE9E81915F214007302C5 /* Build configuration list for PBXNativeTarget "WordReview" */;
+			buildPhases = (
+				528DE9B81915F214007302C5 /* Sources */,
+				528DE9B91915F214007302C5 /* Frameworks */,
+				528DE9BA1915F214007302C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WordReview;
+			productName = WordReview;
+			productReference = 528DE9BC1915F214007302C5 /* WordReview.app */;
+			productType = "com.apple.product-type.application";
+		};
+		528DE9D61915F214007302C5 /* WordReviewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 528DE9EB1915F214007302C5 /* Build configuration list for PBXNativeTarget "WordReviewTests" */;
+			buildPhases = (
+				528DE9D31915F214007302C5 /* Sources */,
+				528DE9D41915F214007302C5 /* Frameworks */,
+				528DE9D51915F214007302C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				528DE9DD1915F214007302C5 /* PBXTargetDependency */,
+			);
+			name = WordReviewTests;
+			productName = WordReviewTests;
+			productReference = 528DE9D71915F214007302C5 /* WordReviewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		528DE9B41915F214007302C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = John;
+				TargetAttributes = {
+					528DE9D61915F214007302C5 = {
+						TestTargetID = 528DE9BB1915F214007302C5;
+					};
+				};
+			};
+			buildConfigurationList = 528DE9B71915F214007302C5 /* Build configuration list for PBXProject "WordReview" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 528DE9B31915F214007302C5;
+			productRefGroup = 528DE9BD1915F214007302C5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				528DE9BB1915F214007302C5 /* WordReview */,
+				528DE9D61915F214007302C5 /* WordReviewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		528DE9BA1915F214007302C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				528DE9CA1915F214007302C5 /* InfoPlist.strings in Resources */,
+				528DE9D21915F214007302C5 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		528DE9D51915F214007302C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				528DE9E31915F214007302C5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		528DE9B81915F214007302C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				528DE9D01915F214007302C5 /* AppDelegate.m in Sources */,
+				528DE9CC1915F214007302C5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		528DE9D31915F214007302C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				528DE9E51915F214007302C5 /* WordReviewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		528DE9DD1915F214007302C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 528DE9BB1915F214007302C5 /* WordReview */;
+			targetProxy = 528DE9DC1915F214007302C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		528DE9C81915F214007302C5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				528DE9C91915F214007302C5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		528DE9E11915F214007302C5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				528DE9E21915F214007302C5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		528DE9E61915F214007302C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		528DE9E71915F214007302C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		528DE9E91915F214007302C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WordReview/WordReview-Prefix.pch";
+				INFOPLIST_FILE = "WordReview/WordReview-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		528DE9EA1915F214007302C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WordReview/WordReview-Prefix.pch";
+				INFOPLIST_FILE = "WordReview/WordReview-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		528DE9EC1915F214007302C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WordReview.app/WordReview";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WordReview/WordReview-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WordReviewTests/WordReviewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		528DE9ED1915F214007302C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WordReview.app/WordReview";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WordReview/WordReview-Prefix.pch";
+				INFOPLIST_FILE = "WordReviewTests/WordReviewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		528DE9B71915F214007302C5 /* Build configuration list for PBXProject "WordReview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				528DE9E61915F214007302C5 /* Debug */,
+				528DE9E71915F214007302C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		528DE9E81915F214007302C5 /* Build configuration list for PBXNativeTarget "WordReview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				528DE9E91915F214007302C5 /* Debug */,
+				528DE9EA1915F214007302C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		528DE9EB1915F214007302C5 /* Build configuration list for PBXNativeTarget "WordReviewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				528DE9EC1915F214007302C5 /* Debug */,
+				528DE9ED1915F214007302C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 528DE9B41915F214007302C5 /* Project object */;
+}
