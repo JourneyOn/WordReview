@@ -34,14 +34,13 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, VIEW_BEGIN_Y + 44, SCREEN_WIDTH, SCREEN_HEIGHT - VIEW_BEGIN_Y - 44) style:UITableViewStyleGrouped];
-    _tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:_tableView];
     
-    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
-    UIButton *logoutBtn = [[UIButton alloc] initWithFrame:CGRectMake(20,0, 280, 44)];
+    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 54)];
+    UIButton *logoutBtn = [[UIButton alloc] initWithFrame:CGRectMake(20,10, 280, 44)];
     logoutBtn.layer.masksToBounds = YES;
     logoutBtn.layer.cornerRadius = 8.f;
     [logoutBtn setBackgroundColor:[UIColor colorWithRed:0.8 green:0.2 blue:0.2 alpha:1]];
