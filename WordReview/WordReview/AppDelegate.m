@@ -7,6 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "DataModelManager.h"
+#import "WRUser.h"
+
+#import "RootTabbarViewController.h"
+#import "HomeViewController.h"
+#import "ProfileViewController.h"
 
 @implementation AppDelegate
 
@@ -17,7 +23,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    [self setupDataModelWithLaunchOptions:launchOptions];
+    [self setupRootView];
     
+    [self doLoginProcess];
     
     return YES;
 }
@@ -47,6 +56,48 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Process
+- (void)setupDataModelWithLaunchOptions:(NSDictionary *)option
+{
+    [[DataModelManager sharedInstance] setupAVOSCloudWithLaunchOpltions:option];
+}
+
+- (void)setupRootView
+{
+    /*
+     NAV -> TAB -> NAV -> Home
+                -> NAV -> Profile
+     */
+    
+    
+    HomeViewController *homeVC = [[HomeViewController alloc] init];
+    homeVC.title = @"Word Review";
+    UINavigationController *homeNAV = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    
+    ProfileViewController *profileVC = [[ProfileViewController alloc] init];
+    profileVC.title = @"Profile";
+    UINavigationController *profileNAV = [[UINavigationController alloc] initWithRootViewController:profileVC];
+    
+    RootTabbarViewController *tabbarVC = [[RootTabbarViewController alloc] init];
+    [tabbarVC setViewControllers:@[homeNAV, profileNAV]];
+    UINavigationController *rootNAV = [[UINavigationController alloc] initWithRootViewController:tabbarVC];
+    rootNAV.navigationBarHidden = YES;
+    
+    self.window.rootViewController = rootNAV;
+}
+
+- (void)doLoginProcess
+{
+    WRUser *user = [WRUser currentUser];
+    if (user != nil) {
+        // do something after user login
+        
+    }
+    else{
+        // move login process at root view appeared!
+    }
 }
 
 @end

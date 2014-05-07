@@ -13,4 +13,9 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "Defines.h"
+    #import "UIView+Position.h"
+
+    #import <SVProgressHUD/SVProgressHUD.h>
+    #import <AVOSCloud/AVOSCloud.h>
 #endif

@@ -7,6 +7,9 @@
 //
 
 #import "HomeViewController.h"
+#import "WRUser.h"
+
+#import "LoginViewController.h"
 
 @interface HomeViewController ()
 
@@ -23,6 +26,14 @@
     return self;
 }
 
+- (void)loadView
+{
+    [super loadView];
+    
+    UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(addBtnPressed:)];
+    self.navigationItem.leftBarButtonItem = addBtn;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,15 +46,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)viewDidAppear:(BOOL)animated
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [super viewDidAppear:animated];
+    
+    [self checkLoginState];
 }
-*/
+
+#pragma mark - Local Function
+- (void)checkLoginState
+{
+    WRUser *user = [WRUser currentUser];
+    if (user == nil) {
+        LoginViewController *loginVC = [[LoginViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        
+        [self presentViewController:nav animated:YES completion:nil];
+    }
+}
+#pragma mark - Local Interaction
+- (void)addBtnPressed:(UIBarButtonItem *)sender
+{
+    
+}
 
 @end

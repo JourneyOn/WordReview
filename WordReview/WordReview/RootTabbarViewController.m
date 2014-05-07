@@ -7,6 +7,8 @@
 //
 
 #import "RootTabbarViewController.h"
+#import "WRUser.h"
+#import "LoginViewController.h"
 
 @interface RootTabbarViewController ()
 
@@ -45,5 +47,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
 
 @end
