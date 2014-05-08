@@ -133,7 +133,7 @@
 
 - (void)forgotBtnPressed:(UIButton *)sender
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Reset Password" message:@"input your emal address" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confrim", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Reset Password" message:@"input your email address" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confrim", nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alertView show];
 }

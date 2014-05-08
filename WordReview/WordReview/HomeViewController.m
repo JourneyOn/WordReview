@@ -10,6 +10,7 @@
 #import "WRUser.h"
 
 #import "LoginViewController.h"
+#import "AddViewController.h"
 
 @interface HomeViewController ()
 
@@ -67,7 +68,9 @@
 #pragma mark - Local Interaction
 - (void)addBtnPressed:(UIBarButtonItem *)sender
 {
-    
+    AddViewController *addVC = [[AddViewController alloc] initWithNibName:@"AddViewController" bundle:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:addVC];
+    [self.navigationController.tabBarController presentViewController:nav animated:YES completion:nil];
 }
 
 @end

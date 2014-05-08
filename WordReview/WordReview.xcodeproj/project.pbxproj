@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521BC6E6191B235300ECED6B /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BC6E5191B235300ECED6B /* AddViewController.m */; };
+		521BC6E9191B730700ECED6B /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521BC6E8191B730700ECED6B /* AddViewController.xib */; };
+		521BC6EF191B7D2000ECED6B /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BC6EE191B7D2000ECED6B /* PlaceholderTextView.m */; };
 		5222125A1919D06200083ADB /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 522212591919D06200083ADB /* Storyboard.storyboard */; };
 		5222125D1919D58100083ADB /* WRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5222125C1919D58100083ADB /* WRUser.m */; };
 		522212611919D6C100083ADB /* DataModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 522212601919D6C100083ADB /* DataModelManager.m */; };
@@ -43,6 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		521BC6E4191B235300ECED6B /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		521BC6E5191B235300ECED6B /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		521BC6E8191B730700ECED6B /* AddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
+		521BC6ED191B7D2000ECED6B /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
+		521BC6EE191B7D2000ECED6B /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
 		522212591919D06200083ADB /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		5222125B1919D58100083ADB /* WRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRUser.h; path = DataModel/WRUser.h; sourceTree = "<group>"; };
 		5222125C1919D58100083ADB /* WRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRUser.m; path = DataModel/WRUser.m; sourceTree = "<group>"; };
@@ -108,6 +116,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		521BC6E1191B22F900ECED6B /* Top Level VC */ = {
+			isa = PBXGroup;
+			children = (
+				521BC6E2191B230D00ECED6B /* User VC */,
+				528DE9EE1915F3D2007302C5 /* RootTabbarViewController.h */,
+				528DE9EF1915F3D2007302C5 /* RootTabbarViewController.m */,
+				528DE9F11915F3E5007302C5 /* HomeViewController.h */,
+				528DE9F21915F3E5007302C5 /* HomeViewController.m */,
+				528DE9F41915F3FF007302C5 /* ProfileViewController.h */,
+				528DE9F51915F3FF007302C5 /* ProfileViewController.m */,
+				5222126E191A2B9800083ADB /* SettingsViewController.h */,
+				5222126F191A2B9800083ADB /* SettingsViewController.m */,
+			);
+			name = "Top Level VC";
+			sourceTree = "<group>";
+		};
+		521BC6E2191B230D00ECED6B /* User VC */ = {
+			isa = PBXGroup;
+			children = (
+				522212621919DE0F00083ADB /* LoginViewController.h */,
+				522212631919DE0F00083ADB /* LoginViewController.m */,
+				522212671919DF2C00083ADB /* SignUpViewController.h */,
+				522212681919DF2C00083ADB /* SignUpViewController.m */,
+			);
+			name = "User VC";
+			sourceTree = "<group>";
+		};
+		521BC6E3191B232100ECED6B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5222126B1919E8E800083ADB /* UIView+Position.h */,
+				5222126C1919E8E800083ADB /* UIView+Position.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		521BC6E7191B235E00ECED6B /* Second Level VC */ = {
+			isa = PBXGroup;
+			children = (
+				521BC6E4191B235300ECED6B /* AddViewController.h */,
+				521BC6E5191B235300ECED6B /* AddViewController.m */,
+				521BC6E8191B730700ECED6B /* AddViewController.xib */,
+			);
+			name = "Second Level VC";
+			sourceTree = "<group>";
+		};
+		521BC6F0191B7DCB00ECED6B /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				521BC6ED191B7D2000ECED6B /* PlaceholderTextView.h */,
+				521BC6EE191B7D2000ECED6B /* PlaceholderTextView.m */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
 		5222125E1919D58D00083ADB /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,25 +217,12 @@
 		528DE9C51915F214007302C5 /* WordReview */ = {
 			isa = PBXGroup;
 			children = (
-				5222125E1919D58D00083ADB /* DataModel */,
 				5222126A1919E5BF00083ADB /* Defines.h */,
-				5222126B1919E8E800083ADB /* UIView+Position.h */,
-				5222126C1919E8E800083ADB /* UIView+Position.m */,
-				528DE9CE1915F214007302C5 /* AppDelegate.h */,
-				528DE9CF1915F214007302C5 /* AppDelegate.m */,
-				522212621919DE0F00083ADB /* LoginViewController.h */,
-				522212631919DE0F00083ADB /* LoginViewController.m */,
-				522212671919DF2C00083ADB /* SignUpViewController.h */,
-				522212681919DF2C00083ADB /* SignUpViewController.m */,
-				528DE9EE1915F3D2007302C5 /* RootTabbarViewController.h */,
-				528DE9EF1915F3D2007302C5 /* RootTabbarViewController.m */,
-				528DE9F11915F3E5007302C5 /* HomeViewController.h */,
-				528DE9F21915F3E5007302C5 /* HomeViewController.m */,
-				528DE9F41915F3FF007302C5 /* ProfileViewController.h */,
-				528DE9F51915F3FF007302C5 /* ProfileViewController.m */,
-				5222126E191A2B9800083ADB /* SettingsViewController.h */,
-				5222126F191A2B9800083ADB /* SettingsViewController.m */,
-				522212591919D06200083ADB /* Storyboard.storyboard */,
+				5222125E1919D58D00083ADB /* DataModel */,
+				521BC6E3191B232100ECED6B /* Category */,
+				521BC6F0191B7DCB00ECED6B /* Custom Views */,
+				521BC6E1191B22F900ECED6B /* Top Level VC */,
+				521BC6E7191B235E00ECED6B /* Second Level VC */,
 				528DE9D11915F214007302C5 /* Images.xcassets */,
 				528DE9C61915F214007302C5 /* Supporting Files */,
 			);
@@ -182,6 +232,9 @@
 		528DE9C61915F214007302C5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				522212591919D06200083ADB /* Storyboard.storyboard */,
+				528DE9CE1915F214007302C5 /* AppDelegate.h */,
+				528DE9CF1915F214007302C5 /* AppDelegate.m */,
 				528DE9C71915F214007302C5 /* WordReview-Info.plist */,
 				528DE9C81915F214007302C5 /* InfoPlist.strings */,
 				528DE9CB1915F214007302C5 /* main.m */,
@@ -287,6 +340,7 @@
 			files = (
 				528DE9CA1915F214007302C5 /* InfoPlist.strings in Resources */,
 				528DE9D21915F214007302C5 /* Images.xcassets in Resources */,
+				521BC6E9191B730700ECED6B /* AddViewController.xib in Resources */,
 				5222125A1919D06200083ADB /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +395,7 @@
 			files = (
 				522212651919DE0F00083ADB /* LoginViewController.m in Sources */,
 				528DE9D01915F214007302C5 /* AppDelegate.m in Sources */,
+				521BC6E6191B235300ECED6B /* AddViewController.m in Sources */,
 				5222125D1919D58100083ADB /* WRUser.m in Sources */,
 				5222126D1919E8E800083ADB /* UIView+Position.m in Sources */,
 				528DE9CC1915F214007302C5 /* main.m in Sources */,
@@ -348,6 +403,7 @@
 				528DE9F31915F3E5007302C5 /* HomeViewController.m in Sources */,
 				522212611919D6C100083ADB /* DataModelManager.m in Sources */,
 				52221270191A2B9800083ADB /* SettingsViewController.m in Sources */,
+				521BC6EF191B7D2000ECED6B /* PlaceholderTextView.m in Sources */,
 				528DE9F61915F3FF007302C5 /* ProfileViewController.m in Sources */,
 				522212691919DF2C00083ADB /* SignUpViewController.m in Sources */,
 			);
