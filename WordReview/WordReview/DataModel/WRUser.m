@@ -10,8 +10,11 @@
 
 @implementation WRUser
 
+@dynamic words;
+
 + (NSString *)parseClassName
 {
     return @"_User";
 }
+
 @end

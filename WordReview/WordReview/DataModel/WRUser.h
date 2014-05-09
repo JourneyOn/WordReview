@@ -10,4 +10,5 @@
 
 @interface WRUser : AVUser <AVSubclassing>
 
+@property (retain, nonatomic) AVRelation *words;
 @end

@@ -8,7 +8,7 @@
 
 #import "DataModelManager.h"
 #import "WRUser.h"
-
+#import "WRWord.h"
 
 #define APP_ID      @"loob22bkczn4jbu955ly40oyjftm0lpnwt1u2le1q496yp88"
 #define APP_KEY     @"9q8dfbph01jnrasna0ek9y7ojn65n5l4yy298ufab5d6bv2s"
@@ -38,5 +38,6 @@ static id sharedInstance;
 - (void)initAVSubClass
 {
     [WRUser registerSubclass];
+    [WRWord registerSubclass];
 }
 @end

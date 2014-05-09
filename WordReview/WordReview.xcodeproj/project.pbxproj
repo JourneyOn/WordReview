@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520A5E9F191C84A0009627C0 /* ImageCropperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 520A5E9E191C84A0009627C0 /* ImageCropperView.m */; };
+		520A5EA3191C8668009627C0 /* ImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520A5EA1191C8668009627C0 /* ImageCropperViewController.m */; };
+		520A5EA4191C8668009627C0 /* ImageCropperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520A5EA2191C8668009627C0 /* ImageCropperViewController.xib */; };
+		520A5EA7191C879F009627C0 /* WRWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 520A5EA6191C879F009627C0 /* WRWord.m */; };
 		521BC6E6191B235300ECED6B /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BC6E5191B235300ECED6B /* AddViewController.m */; };
 		521BC6E9191B730700ECED6B /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521BC6E8191B730700ECED6B /* AddViewController.xib */; };
 		521BC6EF191B7D2000ECED6B /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BC6EE191B7D2000ECED6B /* PlaceholderTextView.m */; };
@@ -46,6 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		520A5E9D191C84A0009627C0 /* ImageCropperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCropperView.h; sourceTree = "<group>"; };
+		520A5E9E191C84A0009627C0 /* ImageCropperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCropperView.m; sourceTree = "<group>"; };
+		520A5EA0191C8668009627C0 /* ImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCropperViewController.h; sourceTree = "<group>"; };
+		520A5EA1191C8668009627C0 /* ImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCropperViewController.m; sourceTree = "<group>"; };
+		520A5EA2191C8668009627C0 /* ImageCropperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCropperViewController.xib; sourceTree = "<group>"; };
+		520A5EA5191C879F009627C0 /* WRWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRWord.h; sourceTree = "<group>"; };
+		520A5EA6191C879F009627C0 /* WRWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRWord.m; sourceTree = "<group>"; };
 		521BC6E4191B235300ECED6B /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		521BC6E5191B235300ECED6B /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		521BC6E8191B730700ECED6B /* AddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
@@ -158,6 +169,9 @@
 				521BC6E4191B235300ECED6B /* AddViewController.h */,
 				521BC6E5191B235300ECED6B /* AddViewController.m */,
 				521BC6E8191B730700ECED6B /* AddViewController.xib */,
+				520A5EA0191C8668009627C0 /* ImageCropperViewController.h */,
+				520A5EA1191C8668009627C0 /* ImageCropperViewController.m */,
+				520A5EA2191C8668009627C0 /* ImageCropperViewController.xib */,
 			);
 			name = "Second Level VC";
 			sourceTree = "<group>";
@@ -165,6 +179,8 @@
 		521BC6F0191B7DCB00ECED6B /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				520A5E9D191C84A0009627C0 /* ImageCropperView.h */,
+				520A5E9E191C84A0009627C0 /* ImageCropperView.m */,
 				521BC6ED191B7D2000ECED6B /* PlaceholderTextView.h */,
 				521BC6EE191B7D2000ECED6B /* PlaceholderTextView.m */,
 			);
@@ -178,6 +194,8 @@
 				522212601919D6C100083ADB /* DataModelManager.m */,
 				5222125B1919D58100083ADB /* WRUser.h */,
 				5222125C1919D58100083ADB /* WRUser.m */,
+				520A5EA5191C879F009627C0 /* WRWord.h */,
+				520A5EA6191C879F009627C0 /* WRWord.m */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -339,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				528DE9CA1915F214007302C5 /* InfoPlist.strings in Resources */,
+				520A5EA4191C8668009627C0 /* ImageCropperViewController.xib in Resources */,
 				528DE9D21915F214007302C5 /* Images.xcassets in Resources */,
 				521BC6E9191B730700ECED6B /* AddViewController.xib in Resources */,
 				5222125A1919D06200083ADB /* Storyboard.storyboard in Resources */,
@@ -396,13 +415,16 @@
 				522212651919DE0F00083ADB /* LoginViewController.m in Sources */,
 				528DE9D01915F214007302C5 /* AppDelegate.m in Sources */,
 				521BC6E6191B235300ECED6B /* AddViewController.m in Sources */,
+				520A5EA3191C8668009627C0 /* ImageCropperViewController.m in Sources */,
 				5222125D1919D58100083ADB /* WRUser.m in Sources */,
 				5222126D1919E8E800083ADB /* UIView+Position.m in Sources */,
 				528DE9CC1915F214007302C5 /* main.m in Sources */,
 				528DE9F01915F3D2007302C5 /* RootTabbarViewController.m in Sources */,
+				520A5EA7191C879F009627C0 /* WRWord.m in Sources */,
 				528DE9F31915F3E5007302C5 /* HomeViewController.m in Sources */,
 				522212611919D6C100083ADB /* DataModelManager.m in Sources */,
 				52221270191A2B9800083ADB /* SettingsViewController.m in Sources */,
+				520A5E9F191C84A0009627C0 /* ImageCropperView.m in Sources */,
 				521BC6EF191B7D2000ECED6B /* PlaceholderTextView.m in Sources */,
 				528DE9F61915F3FF007302C5 /* ProfileViewController.m in Sources */,
 				522212691919DF2C00083ADB /* SignUpViewController.m in Sources */,

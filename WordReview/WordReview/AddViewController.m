@@ -8,8 +8,12 @@
 
 #import "AddViewController.h"
 #import "PlaceholderTextView.h"
+#import "ImageCropperViewController.h"
 
-@interface AddViewController () <UITextFieldDelegate, UITextViewDelegate>
+#import "WRWord.h"
+#import "WRUser.h"
+
+@interface AddViewController () <UITextFieldDelegate, UITextViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     __weak IBOutlet UITextField *_wordTextField;
     __weak IBOutlet PlaceholderTextView *_descriptionTextView;
@@ -57,7 +61,7 @@
     
     _descriptionTextView.layer.masksToBounds = YES;
     _descriptionTextView.layer.cornerRadius = 12.f;
-    [_descriptionTextView setPlaceholder:@"Origin"];
+    [_descriptionTextView setPlaceholder:@"The original source"];
     
     UIToolbar *bar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
     UIBarButtonItem *flexibleBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
@@ -87,7 +91,37 @@
 
 - (void)saveBtnPressed:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    WRUser *currentUser = [WRUser currentUser];
+    
+    WRWord *word = [WRWord new];
+    word.user =  currentUser;
+    word.word = _wordTextField.text;
+    word.source = _descriptionTextView.text;
+    if (_imageView.image) {
+        AVFile *image = [AVFile fileWithData:UIImagePNGRepresentation(_imageView.image)];
+        word.image = image;
+    }
+    
+    [SVProgressHUD showWithStatus:@"saving..."];
+    [word saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            [currentUser.words addObject:word];
+
+            [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    [SVProgressHUD showSuccessWithStatus:@"Success!"];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }
+                else{
+                    [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
+                }
+            }];
+        }
+        else{
+            [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
+        }
+    }];
+    
 }
 
 - (void)keyboardDoneBtnPressed:(id)sender
@@ -96,7 +130,8 @@
 }
 
 - (IBAction)imageViewTapped:(UITapGestureRecognizer *)sender {
-    
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Use Camera",@"From User Lib", nil];
+    [as showInView:self.view];
 }
 
 #pragma mark - Delegate
@@ -106,5 +141,41 @@
     return YES;
 }
 
+#pragma mark - ActionSheet Delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        if ([UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera]) {
+            UIImagePickerController *vc = [[UIImagePickerController alloc] init];
+            vc.sourceType = UIImagePickerControllerSourceTypeCamera;
+            
+            [self presentViewController:vc animated:YES completion:nil];
+        }
+        else{
+            [SVProgressHUD showErrorWithStatus:@"Camera Not Available!"];
+        }
+    }
+    else if (buttonIndex == 1) {
+        if ([UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+            UIImagePickerController *vc = [[UIImagePickerController alloc] init];
+            vc.delegate = self;
+            vc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+            
+            [self presentViewController:vc animated:YES completion:nil];
+        }
+        else{
+            [SVProgressHUD showErrorWithStatus:@"Photo Lib Not Available!"];
+        }
+    }
+    else if (buttonIndex == 2) {
+        
+    }
+}
 
+#pragma mark - Image Pick Controller Delegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo NS_DEPRECATED_IOS(2_0, 3_0);
+{
+    ImageCropperViewController *targetVC = [[ImageCropperViewController alloc] initWithNibName:NSStringFromClass([ImageCropperViewController class]) bundle:nil];
+    [picker.navigationController pushViewController:targetVC animated:YES];
+}
 @end
