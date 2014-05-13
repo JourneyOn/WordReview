@@ -14,6 +14,8 @@
 		521BC6E6191B235300ECED6B /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BC6E5191B235300ECED6B /* AddViewController.m */; };
 		521BC6E9191B730700ECED6B /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521BC6E8191B730700ECED6B /* AddViewController.xib */; };
 		521BC6EF191B7D2000ECED6B /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BC6EE191B7D2000ECED6B /* PlaceholderTextView.m */; };
+		52213DD5191F29F700486CE7 /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52213DD3191F29F700486CE7 /* profile@2x.png */; };
+		52213DD6191F29F700486CE7 /* word_review@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52213DD4191F29F700486CE7 /* word_review@2x.png */; };
 		5222125A1919D06200083ADB /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 522212591919D06200083ADB /* Storyboard.storyboard */; };
 		5222125D1919D58100083ADB /* WRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5222125C1919D58100083ADB /* WRUser.m */; };
 		522212611919D6C100083ADB /* DataModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 522212601919D6C100083ADB /* DataModelManager.m */; };
@@ -62,6 +64,8 @@
 		521BC6E8191B730700ECED6B /* AddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
 		521BC6ED191B7D2000ECED6B /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
 		521BC6EE191B7D2000ECED6B /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
+		52213DD3191F29F700486CE7 /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@2x.png"; sourceTree = "<group>"; };
+		52213DD4191F29F700486CE7 /* word_review@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "word_review@2x.png"; sourceTree = "<group>"; };
 		522212591919D06200083ADB /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		5222125B1919D58100083ADB /* WRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRUser.h; path = DataModel/WRUser.h; sourceTree = "<group>"; };
 		5222125C1919D58100083ADB /* WRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRUser.m; path = DataModel/WRUser.m; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 		528DE9B31915F214007302C5 = {
 			isa = PBXGroup;
 			children = (
+				52213DD3191F29F700486CE7 /* profile@2x.png */,
+				52213DD4191F29F700486CE7 /* word_review@2x.png */,
 				528DE9C51915F214007302C5 /* WordReview */,
 				528DE9DE1915F214007302C5 /* WordReviewTests */,
 				528DE9BE1915F214007302C5 /* Frameworks */,
@@ -357,7 +363,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				528DE9CA1915F214007302C5 /* InfoPlist.strings in Resources */,
+				52213DD6191F29F700486CE7 /* word_review@2x.png in Resources */,
 				520A5EA4191C8668009627C0 /* ImageCropperViewController.xib in Resources */,
+				52213DD5191F29F700486CE7 /* profile@2x.png in Resources */,
 				528DE9D21915F214007302C5 /* Images.xcassets in Resources */,
 				521BC6E9191B730700ECED6B /* AddViewController.xib in Resources */,
 				5222125A1919D06200083ADB /* Storyboard.storyboard in Resources */,

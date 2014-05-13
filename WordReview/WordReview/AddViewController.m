@@ -147,6 +147,7 @@
     if (buttonIndex == 0) {
         if ([UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera]) {
             UIImagePickerController *vc = [[UIImagePickerController alloc] init];
+            vc.delegate = self;
             vc.sourceType = UIImagePickerControllerSourceTypeCamera;
             
             [self presentViewController:vc animated:YES completion:nil];

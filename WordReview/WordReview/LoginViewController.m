@@ -35,6 +35,8 @@
     
     self.title = @"Log in";
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     UIBarButtonItem *signUpBtn = [[UIBarButtonItem alloc] initWithTitle:@"Sign Up" style:UIBarButtonItemStylePlain target:self action:@selector(signUpBtnPressed:)];
     self.navigationItem.rightBarButtonItem = signUpBtn;
     

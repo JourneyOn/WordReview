@@ -74,10 +74,12 @@
     
     HomeViewController *homeVC = [[HomeViewController alloc] init];
     homeVC.title = @"Word Review";
+    homeVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Word Review" image:[UIImage imageNamed:@"word_review.png"] selectedImage:nil];
     UINavigationController *homeNAV = [[UINavigationController alloc] initWithRootViewController:homeVC];
     
     ProfileViewController *profileVC = [[ProfileViewController alloc] init];
     profileVC.title = @"Profile";
+    profileVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Profile" image:[UIImage imageNamed:@"profile.png"] selectedImage:nil];
     UINavigationController *profileNAV = [[UINavigationController alloc] initWithRootViewController:profileVC];
     
     RootTabbarViewController *tabbarVC = [[RootTabbarViewController alloc] init];
