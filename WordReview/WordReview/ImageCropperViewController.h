@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface ImageCropperViewController : UIViewController
 
+- (void)setImage:(UIImage *)image completeBlock:(void (^)(UIImage *image))block;
 @end

@@ -57,10 +57,9 @@
     self.title = @"Add New Word";
     
     UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelBtnPressed:)];
-    UIBarButtonItem *dicBtn = [[UIBarButtonItem alloc] initWithTitle:@"Dic." style:UIBarButtonItemStylePlain target:self action:@selector(dicBtnPressed:)];
     UIBarButtonItem *saveBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveBtnPressed:)];
     self.navigationItem.leftBarButtonItem = cancelBtn;
-    self.navigationItem.rightBarButtonItems = @[saveBtn,dicBtn];
+    self.navigationItem.rightBarButtonItems = @[saveBtn];
     
     _wordTextField.layer.masksToBounds = YES;
     _wordTextField.layer.cornerRadius = 8.f;
@@ -70,20 +69,24 @@
     [_descriptionTextView setPlaceholder:@"The original source"];
     
     UIToolbar *bar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
-    UIBarButtonItem *flexibleBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+//    UIBarButtonItem *flexibleBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *keyboardDoneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(keyboardDoneBtnPressed:)];
-    [bar setItems:@[flexibleBtn,keyboardDoneBtn]];
+    [bar setItems:@[keyboardDoneBtn]];
+    _wordTextField.inputAccessoryView = bar;
     _descriptionTextView.inputAccessoryView = bar;
     
+    _imageView.clipsToBounds = YES;
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
     _imageView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     _imageView.layer.borderWidth = 2.f;
     _imageView.layer.cornerRadius = 8.f;
     
     [_addImageLabel setAttributedText:[[NSAttributedString alloc] initWithString:@"Add Photo" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17], NSUnderlineStyleAttributeName: @1}]];
     
-    
     showDicBtn.layer.masksToBounds = YES;
     showDicBtn.layer.cornerRadius = 8.f;
+    showDicBtn.layer.borderWidth = 1.f;
+    showDicBtn.layer.borderColor = [[UIColor darkGrayColor] CGColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -141,6 +144,7 @@
 
 - (void)keyboardDoneBtnPressed:(id)sender
 {
+    [_wordTextField resignFirstResponder];
     [_descriptionTextView resignFirstResponder];
 }
 
@@ -160,7 +164,7 @@
         urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            WRWordDic *wordDic = [WRWordDic wordDicWithYouDaoDic:responseObject];
+//            WRWordDic *wordDic = [WRWordDic wordDicWithYouDaoDic:responseObject];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             
         }];
@@ -185,7 +189,6 @@
             UIImagePickerController *vc = [[UIImagePickerController alloc] init];
             vc.delegate = self;
             vc.sourceType = UIImagePickerControllerSourceTypeCamera;
-            
             [self presentViewController:vc animated:YES completion:nil];
         }
         else{
@@ -193,11 +196,10 @@
         }
     }
     else if (buttonIndex == 1) {
-        if ([UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+        if ([UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary]) {
             UIImagePickerController *vc = [[UIImagePickerController alloc] init];
             vc.delegate = self;
-            vc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-            
+            vc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
             [self presentViewController:vc animated:YES completion:nil];
         }
         else{
@@ -212,7 +214,15 @@
 #pragma mark - Image Pick Controller Delegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo NS_DEPRECATED_IOS(2_0, 3_0);
 {
-    ImageCropperViewController *targetVC = [[ImageCropperViewController alloc] initWithNibName:NSStringFromClass([ImageCropperViewController class]) bundle:nil];
-    [picker.navigationController pushViewController:targetVC animated:YES];
+    [picker dismissViewControllerAnimated:YES completion:^{
+        ImageCropperViewController *targetVC = [[ImageCropperViewController alloc] init];
+        [targetVC setImage:image completeBlock:^(UIImage *image) {
+            _imageView.image = image;
+            _addImageLabel.hidden = YES;
+        }];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:targetVC];
+        [self presentViewController:nav animated:YES completion:nil];
+    }];
+
 }
 @end

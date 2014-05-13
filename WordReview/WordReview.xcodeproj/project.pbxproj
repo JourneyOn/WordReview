@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		520A5E9F191C84A0009627C0 /* ImageCropperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 520A5E9E191C84A0009627C0 /* ImageCropperView.m */; };
 		520A5EA3191C8668009627C0 /* ImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520A5EA1191C8668009627C0 /* ImageCropperViewController.m */; };
-		520A5EA4191C8668009627C0 /* ImageCropperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520A5EA2191C8668009627C0 /* ImageCropperViewController.xib */; };
 		520A5EA7191C879F009627C0 /* WRWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 520A5EA6191C879F009627C0 /* WRWord.m */; };
 		521BC6E6191B235300ECED6B /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BC6E5191B235300ECED6B /* AddViewController.m */; };
 		521BC6E9191B730700ECED6B /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521BC6E8191B730700ECED6B /* AddViewController.xib */; };
@@ -59,7 +58,6 @@
 		520A5E9E191C84A0009627C0 /* ImageCropperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCropperView.m; sourceTree = "<group>"; };
 		520A5EA0191C8668009627C0 /* ImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCropperViewController.h; sourceTree = "<group>"; };
 		520A5EA1191C8668009627C0 /* ImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCropperViewController.m; sourceTree = "<group>"; };
-		520A5EA2191C8668009627C0 /* ImageCropperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCropperViewController.xib; sourceTree = "<group>"; };
 		520A5EA5191C879F009627C0 /* WRWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRWord.h; sourceTree = "<group>"; };
 		520A5EA6191C879F009627C0 /* WRWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRWord.m; sourceTree = "<group>"; };
 		521BC6E4191B235300ECED6B /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 				521BC6E8191B730700ECED6B /* AddViewController.xib */,
 				520A5EA0191C8668009627C0 /* ImageCropperViewController.h */,
 				520A5EA1191C8668009627C0 /* ImageCropperViewController.m */,
-				520A5EA2191C8668009627C0 /* ImageCropperViewController.xib */,
 			);
 			name = "Second Level VC";
 			sourceTree = "<group>";
@@ -385,7 +382,6 @@
 			files = (
 				528DE9CA1915F214007302C5 /* InfoPlist.strings in Resources */,
 				52213DD6191F29F700486CE7 /* word_review@2x.png in Resources */,
-				520A5EA4191C8668009627C0 /* ImageCropperViewController.xib in Resources */,
 				52213DD5191F29F700486CE7 /* profile@2x.png in Resources */,
 				528DE9D21915F214007302C5 /* Images.xcassets in Resources */,
 				52F397DB1921D1DA00AD0A4D /* Server.plist in Resources */,
