@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>YouDaoServer_Full</key>
+	<string>http://dict.youdao.com/jsonapi?client=mobile&amp;le=eng&amp;q=hello&amp;dicts={&quot;count&quot;:20,&quot;dicts&quot;:[[&quot;ec&quot;,&quot;ce&quot;],[&quot;ec21&quot;],[&quot;ce_new&quot;],[&quot;ee&quot;],[&quot;hh&quot;],[&quot;collins&quot;],[&quot;special&quot;],[&quot;phrs&quot;],[&quot;syno&quot;],[&quot;rel_word&quot;],[&quot;pic_dict&quot;],[&quot;fanyi&quot;],[&quot;web_search&quot;],[&quot;typos&quot;],[&quot;web_trans&quot;],[&quot;blng_sents_part&quot;],[&quot;media_sents_part&quot;],[&quot;auth_sents_part&quot;],[&quot;baike&quot;]]}&amp;client=mobile&amp;keyfrom=mdict.5.0.1.iphone&amp;imei=006ba9d281393bdd97a9debf80fa1914&amp;model=iPhone4S&amp;deviceid=006ba9d281393bdd97a9debf80fa1914&amp;mid=7.1&amp;username=(null)&amp;vendor=AppStore&amp;abtest=3&amp;userid=</string>
+	<key>YouDaoServer_Collins</key>
+	<string>http://dict.youdao.com/jsonapi?client=mobile&amp;le=eng&amp;q=hello&amp;dicts={&quot;count&quot;:20,&quot;dicts&quot;:[[&quot;ec&quot;,&quot;ce&quot;],[&quot;ec21&quot;],[&quot;ce_new&quot;],[&quot;ee&quot;],[&quot;hh&quot;],[&quot;collins&quot;],[&quot;special&quot;],[&quot;phrs&quot;],[&quot;syno&quot;],[&quot;rel_word&quot;],[&quot;pic_dict&quot;],[&quot;fanyi&quot;],[&quot;web_search&quot;],[&quot;typos&quot;],[&quot;web_trans&quot;],[&quot;blng_sents_part&quot;],[&quot;media_sents_part&quot;],[&quot;auth_sents_part&quot;],[&quot;baike&quot;]]}</string>
+</dict>
+</plist>

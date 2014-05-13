@@ -52,9 +52,10 @@
     self.title = @"Add New Word";
     
     UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelBtnPressed:)];
+    UIBarButtonItem *dicBtn = [[UIBarButtonItem alloc] initWithTitle:@"Dic." style:UIBarButtonItemStylePlain target:self action:@selector(dicBtnPressed:)];
     UIBarButtonItem *saveBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveBtnPressed:)];
     self.navigationItem.leftBarButtonItem = cancelBtn;
-    self.navigationItem.rightBarButtonItem = saveBtn;
+    self.navigationItem.rightBarButtonItems = @[saveBtn,dicBtn];
     
     _wordTextField.layer.masksToBounds = YES;
     _wordTextField.layer.cornerRadius = 8.f;
@@ -87,6 +88,11 @@
 - (void)cancelBtnPressed:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)dicBtnPressed:(id)sender
+{
+    
 }
 
 - (void)saveBtnPressed:(id)sender

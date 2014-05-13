@@ -38,6 +38,7 @@
 		528DE9F01915F3D2007302C5 /* RootTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528DE9EF1915F3D2007302C5 /* RootTabbarViewController.m */; };
 		528DE9F31915F3E5007302C5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528DE9F21915F3E5007302C5 /* HomeViewController.m */; };
 		528DE9F61915F3FF007302C5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528DE9F51915F3FF007302C5 /* ProfileViewController.m */; };
+		52F397DB1921D1DA00AD0A4D /* Server.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52F397DA1921D1DA00AD0A4D /* Server.plist */; };
 		C7CEA72BAE61487A91152834 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 740B8F01AE884651A12969D6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		528DE9F21915F3E5007302C5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		528DE9F41915F3FF007302C5 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		528DE9F51915F3FF007302C5 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		52F397DA1921D1DA00AD0A4D /* Server.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Server.plist; sourceTree = "<group>"; };
 		740B8F01AE884651A12969D6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C85648C8211644B689A86950 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +209,7 @@
 		528DE9B31915F214007302C5 = {
 			isa = PBXGroup;
 			children = (
+				52F397DA1921D1DA00AD0A4D /* Server.plist */,
 				52213DD3191F29F700486CE7 /* profile@2x.png */,
 				52213DD4191F29F700486CE7 /* word_review@2x.png */,
 				528DE9C51915F214007302C5 /* WordReview */,
@@ -367,6 +370,7 @@
 				520A5EA4191C8668009627C0 /* ImageCropperViewController.xib in Resources */,
 				52213DD5191F29F700486CE7 /* profile@2x.png in Resources */,
 				528DE9D21915F214007302C5 /* Images.xcassets in Resources */,
+				52F397DB1921D1DA00AD0A4D /* Server.plist in Resources */,
 				521BC6E9191B730700ECED6B /* AddViewController.xib in Resources */,
 				5222125A1919D06200083ADB /* Storyboard.storyboard in Resources */,
 			);
