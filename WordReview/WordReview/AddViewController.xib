@@ -10,6 +10,8 @@
                 <outlet property="_descriptionTextView" destination="rMS-uy-1cA" id="jW0-uN-epT"/>
                 <outlet property="_imageView" destination="Jr3-Fb-7L4" id="GZU-FQ-Wvu"/>
                 <outlet property="_wordTextField" destination="ZWt-jv-stf" id="cpB-Wl-Tgz"/>
+                <outlet property="activityIndicator" destination="g5H-l7-cLP" id="xyi-KF-Crl"/>
+                <outlet property="showDicBtn" destination="v81-4F-oOa" id="1cL-Jp-wQn"/>
                 <outlet property="view" destination="ZC2-RW-gXu" id="4x8-9j-Quj"/>
             </connections>
         </placeholder>
@@ -53,8 +55,24 @@
                     <color key="textColor" red="0.49803921580314636" green="0.49803921580314636" blue="0.49803921580314636" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="v81-4F-oOa">
+                    <rect key="frame" x="83" y="402" width="154" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.94096584901619029" blue="0.74180124863436503" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="15"/>
+                    <state key="normal" title="Show Dictionary">
+                        <color key="titleShadowColor" red="0.52254131699999995" green="0.62537006230000003" blue="0.95258689409999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="showDicBtnPressed:" destination="-1" eventType="touchUpInside" id="r7f-kq-rCe"/>
+                    </connections>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="g5H-l7-cLP">
+                    <rect key="frame" x="150" y="408" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

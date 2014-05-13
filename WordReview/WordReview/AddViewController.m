@@ -13,12 +13,17 @@
 #import "WRWord.h"
 #import "WRUser.h"
 
+#import "DataModelManager.h"
+#import "DicParser.h"
 @interface AddViewController () <UITextFieldDelegate, UITextViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     __weak IBOutlet UITextField *_wordTextField;
     __weak IBOutlet PlaceholderTextView *_descriptionTextView;
     __weak IBOutlet UIImageView *_imageView;
     __weak IBOutlet UILabel *_addImageLabel;
+    __weak IBOutlet UIButton *showDicBtn;
+    __weak IBOutlet UIActivityIndicatorView *activityIndicator;
+    
 }
 @end
 
@@ -75,6 +80,10 @@
     _imageView.layer.cornerRadius = 8.f;
     
     [_addImageLabel setAttributedText:[[NSAttributedString alloc] initWithString:@"Add Photo" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17], NSUnderlineStyleAttributeName: @1}]];
+    
+    
+    showDicBtn.layer.masksToBounds = YES;
+    showDicBtn.layer.cornerRadius = 8.f;
 }
 
 - (void)didReceiveMemoryWarning
@@ -138,6 +147,27 @@
 - (IBAction)imageViewTapped:(UITapGestureRecognizer *)sender {
     UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Use Camera",@"From User Lib", nil];
     [as showInView:self.view];
+}
+
+- (IBAction)showDicBtnPressed:(UIButton *)sender {
+    NSString *word = [_wordTextField.text trimedForWord];
+    if (word.length) {
+        [sender setTitle:@"" forState:UIControlStateNormal];
+        activityIndicator.hidden = NO;
+        [activityIndicator startAnimating];
+        
+        NSString *urlStr = [NSString stringWithFormat:[[DataModelManager sharedInstance] getServerByKey:SERVER_YOUDAO_COLLINS], word];
+        urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            WRWordDic *wordDic = [WRWordDic wordDicWithYouDaoDic:responseObject];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+        }];
+    }
+    else{
+        
+    }
 }
 
 #pragma mark - Delegate

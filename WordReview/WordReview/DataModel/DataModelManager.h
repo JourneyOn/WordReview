@@ -14,4 +14,7 @@
 
 - (void)setupAVOSCloudWithLaunchOpltions:(NSDictionary *)option;
 - (void)initAVSubClass;
+
+
+- (NSString *)getServerByKey:(NSString *)key;
 @end

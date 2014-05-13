@@ -18,4 +18,5 @@
 
     #import <SVProgressHUD/SVProgressHUD.h>
     #import <AVOSCloud/AVOSCloud.h>
+    #import <AFNetworking.h>
 #endif

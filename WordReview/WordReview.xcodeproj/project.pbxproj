@@ -39,6 +39,8 @@
 		528DE9F31915F3E5007302C5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528DE9F21915F3E5007302C5 /* HomeViewController.m */; };
 		528DE9F61915F3FF007302C5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528DE9F51915F3FF007302C5 /* ProfileViewController.m */; };
 		52F397DB1921D1DA00AD0A4D /* Server.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52F397DA1921D1DA00AD0A4D /* Server.plist */; };
+		52F397DE1921EF7B00AD0A4D /* WRWordDic.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F397DD1921EF7B00AD0A4D /* WRWordDic.m */; };
+		52F397E11921FAAA00AD0A4D /* DicParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F397E01921FAAA00AD0A4D /* DicParser.m */; };
 		C7CEA72BAE61487A91152834 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 740B8F01AE884651A12969D6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +106,10 @@
 		528DE9F41915F3FF007302C5 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		528DE9F51915F3FF007302C5 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		52F397DA1921D1DA00AD0A4D /* Server.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Server.plist; sourceTree = "<group>"; };
+		52F397DC1921EF7B00AD0A4D /* WRWordDic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRWordDic.h; path = DataModel/WRWordDic.h; sourceTree = "<group>"; };
+		52F397DD1921EF7B00AD0A4D /* WRWordDic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRWordDic.m; path = DataModel/WRWordDic.m; sourceTree = "<group>"; };
+		52F397DF1921FAAA00AD0A4D /* DicParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicParser.h; sourceTree = "<group>"; };
+		52F397E01921FAAA00AD0A4D /* DicParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicParser.m; sourceTree = "<group>"; };
 		740B8F01AE884651A12969D6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C85648C8211644B689A86950 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,6 +208,9 @@
 				5222125C1919D58100083ADB /* WRUser.m */,
 				520A5EA5191C879F009627C0 /* WRWord.h */,
 				520A5EA6191C879F009627C0 /* WRWord.m */,
+				52F397DC1921EF7B00AD0A4D /* WRWordDic.h */,
+				52F397DD1921EF7B00AD0A4D /* WRWordDic.m */,
+				52F397E21921FAB400AD0A4D /* Parser */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -286,6 +295,15 @@
 				528DE9E11915F214007302C5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52F397E21921FAB400AD0A4D /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				52F397DF1921FAAA00AD0A4D /* DicParser.h */,
+				52F397E01921FAAA00AD0A4D /* DicParser.m */,
+			);
+			name = Parser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,9 +455,11 @@
 				522212611919D6C100083ADB /* DataModelManager.m in Sources */,
 				52221270191A2B9800083ADB /* SettingsViewController.m in Sources */,
 				520A5E9F191C84A0009627C0 /* ImageCropperView.m in Sources */,
+				52F397E11921FAAA00AD0A4D /* DicParser.m in Sources */,
 				521BC6EF191B7D2000ECED6B /* PlaceholderTextView.m in Sources */,
 				528DE9F61915F3FF007302C5 /* ProfileViewController.m in Sources */,
 				522212691919DF2C00083ADB /* SignUpViewController.m in Sources */,
+				52F397DE1921EF7B00AD0A4D /* WRWordDic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

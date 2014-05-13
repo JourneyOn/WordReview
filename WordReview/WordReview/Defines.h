@@ -16,4 +16,11 @@
 #define VIEW_BEGIN_Y (IS_IOS7 ? 20 : 0)
 #define NAV_HEIGHT 44
 
+
+
+
+#define SERVER_YOUDAO_FULL                  @"YouDaoServer_Full"
+#define SERVER_YOUDAO_COLLINS               @"YouDaoServer_Collins"
+#define SERVER_YOUDAO_PRONOUNCE_ENGLISH     @"YouDaoPronounce_english"
+#define SERVER_YOUDAO_PRONOUNCE_AMERICA     @"YouDaoPronounce_america"
 #endif
