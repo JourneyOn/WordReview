@@ -42,7 +42,7 @@
     self.navigationItem.leftBarButtonItem = cancelBtn;
     self.navigationItem.rightBarButtonItem = pickBtn;
     
-    _imageCropperView = [[ImageCropperView alloc] initWithFrame:self.view.bounds];
+    _imageCropperView = [[ImageCropperView alloc] initWithFrame:CGRectMake(0, VIEW_BEGIN_Y + 44, SCREEN_WIDTH, SCREEN_HEIGHT - VIEW_BEGIN_Y - 44)];
     [_imageCropperView setImage:_image];
     [self.view addSubview:_imageCropperView];
 }

@@ -71,6 +71,7 @@
         
         [entryArray addObject:parseEntryDic];
     }
+    wordDic.entries = [NSArray arrayWithArray:entryArray];
     
     return wordDic;
 }

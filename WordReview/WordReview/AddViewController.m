@@ -9,6 +9,7 @@
 #import "AddViewController.h"
 #import "PlaceholderTextView.h"
 #import "ImageCropperViewController.h"
+#import "DicViewController.h"
 
 #import "WRWord.h"
 #import "WRUser.h"
@@ -156,18 +157,22 @@
 - (IBAction)showDicBtnPressed:(UIButton *)sender {
     NSString *word = [_wordTextField.text trimedForWord];
     if (word.length) {
-        [sender setTitle:@"" forState:UIControlStateNormal];
-        activityIndicator.hidden = NO;
-        [activityIndicator startAnimating];
-        
-        NSString *urlStr = [NSString stringWithFormat:[[DataModelManager sharedInstance] getServerByKey:SERVER_YOUDAO_COLLINS], word];
-        urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        [sender setTitle:@"" forState:UIControlStateNormal];
+//        sender.enabled = NO;
+//        activityIndicator.hidden = NO;
+//        [activityIndicator startAnimating];
+//        
+//        NSString *urlStr = [NSString stringWithFormat:[[DataModelManager sharedInstance] getServerByKey:SERVER_YOUDAO_COLLINS], word];
+//        urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//        [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //            WRWordDic *wordDic = [WRWordDic wordDicWithYouDaoDic:responseObject];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            
-        }];
+//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//            
+//        }];
+        
+        DicViewController *dicVC = [[DicViewController alloc] initWithWord:word];
+        [self.navigationController pushViewController:dicVC animated:YES];
     }
     else{
         

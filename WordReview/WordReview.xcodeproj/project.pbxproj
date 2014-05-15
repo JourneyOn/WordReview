@@ -37,6 +37,8 @@
 		528DE9F01915F3D2007302C5 /* RootTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528DE9EF1915F3D2007302C5 /* RootTabbarViewController.m */; };
 		528DE9F31915F3E5007302C5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528DE9F21915F3E5007302C5 /* HomeViewController.m */; };
 		528DE9F61915F3FF007302C5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528DE9F51915F3FF007302C5 /* ProfileViewController.m */; };
+		52A574C21924BC5800825203 /* DicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A574C11924BC5800825203 /* DicViewController.m */; };
+		52A574C71924C2B300825203 /* DicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A574C61924C2B300825203 /* DicCell.m */; };
 		52F397DB1921D1DA00AD0A4D /* Server.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52F397DA1921D1DA00AD0A4D /* Server.plist */; };
 		52F397DE1921EF7B00AD0A4D /* WRWordDic.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F397DD1921EF7B00AD0A4D /* WRWordDic.m */; };
 		52F397E11921FAAA00AD0A4D /* DicParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F397E01921FAAA00AD0A4D /* DicParser.m */; };
@@ -103,6 +105,10 @@
 		528DE9F21915F3E5007302C5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		528DE9F41915F3FF007302C5 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		528DE9F51915F3FF007302C5 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		52A574C01924BC5800825203 /* DicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicViewController.h; sourceTree = "<group>"; };
+		52A574C11924BC5800825203 /* DicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicViewController.m; sourceTree = "<group>"; };
+		52A574C51924C2B300825203 /* DicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicCell.h; sourceTree = "<group>"; };
+		52A574C61924C2B300825203 /* DicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicCell.m; sourceTree = "<group>"; };
 		52F397DA1921D1DA00AD0A4D /* Server.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Server.plist; sourceTree = "<group>"; };
 		52F397DC1921EF7B00AD0A4D /* WRWordDic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRWordDic.h; path = DataModel/WRWordDic.h; sourceTree = "<group>"; };
 		52F397DD1921EF7B00AD0A4D /* WRWordDic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRWordDic.m; path = DataModel/WRWordDic.m; sourceTree = "<group>"; };
@@ -181,6 +187,8 @@
 				521BC6E8191B730700ECED6B /* AddViewController.xib */,
 				520A5EA0191C8668009627C0 /* ImageCropperViewController.h */,
 				520A5EA1191C8668009627C0 /* ImageCropperViewController.m */,
+				52A574C01924BC5800825203 /* DicViewController.h */,
+				52A574C11924BC5800825203 /* DicViewController.m */,
 			);
 			name = "Second Level VC";
 			sourceTree = "<group>";
@@ -207,6 +215,8 @@
 				520A5EA6191C879F009627C0 /* WRWord.m */,
 				52F397DC1921EF7B00AD0A4D /* WRWordDic.h */,
 				52F397DD1921EF7B00AD0A4D /* WRWordDic.m */,
+				52A574C51924C2B300825203 /* DicCell.h */,
+				52A574C61924C2B300825203 /* DicCell.m */,
 				52F397E21921FAB400AD0A4D /* Parser */,
 			);
 			name = DataModel;
@@ -441,6 +451,7 @@
 				522212651919DE0F00083ADB /* LoginViewController.m in Sources */,
 				528DE9D01915F214007302C5 /* AppDelegate.m in Sources */,
 				521BC6E6191B235300ECED6B /* AddViewController.m in Sources */,
+				52A574C21924BC5800825203 /* DicViewController.m in Sources */,
 				520A5EA3191C8668009627C0 /* ImageCropperViewController.m in Sources */,
 				5222125D1919D58100083ADB /* WRUser.m in Sources */,
 				5222126D1919E8E800083ADB /* UIView+Position.m in Sources */,
@@ -453,6 +464,7 @@
 				520A5E9F191C84A0009627C0 /* ImageCropperView.m in Sources */,
 				52F397E11921FAAA00AD0A4D /* DicParser.m in Sources */,
 				521BC6EF191B7D2000ECED6B /* PlaceholderTextView.m in Sources */,
+				52A574C71924C2B300825203 /* DicCell.m in Sources */,
 				528DE9F61915F3FF007302C5 /* ProfileViewController.m in Sources */,
 				522212691919DF2C00083ADB /* SignUpViewController.m in Sources */,
 				52F397DE1921EF7B00AD0A4D /* WRWordDic.m in Sources */,

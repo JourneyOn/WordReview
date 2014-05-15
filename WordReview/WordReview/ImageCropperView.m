@@ -12,6 +12,9 @@
 #define COVER_COLOR [UIColor colorWithRed:1 green:1 blue:1 alpha:0.6]
 #define LINE_COLOR [UIColor blueColor]
 
+#define CROP_WIDTH      320
+#define CROP_HEIGHT     320
+
 @interface ImageCropperView() <UIScrollViewDelegate>
 {
     UIScrollView *_scrollView;
@@ -26,7 +29,7 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    NSAssert(frame.size.width >= 320 && frame.size.height >= 320, @"frame size must bigger than 320,320");
+    NSAssert(frame.size.width >= CROP_WIDTH && frame.size.height >= CROP_HEIGHT, @"frame size must bigger than CROP AREA");
     
     self = [super initWithFrame:frame];
     if (self) {
@@ -40,7 +43,7 @@
 {
     self.backgroundColor = [UIColor blackColor];
     
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, (self.frameHeight- 320)/2, 320, 320)];
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake((320 - CROP_WIDTH)/2, (self.frameHeight- CROP_HEIGHT)/2, CROP_WIDTH, CROP_HEIGHT)];
     _scrollView.showsHorizontalScrollIndicator = _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.delegate = self;
     _scrollView.clipsToBounds = NO;
@@ -79,27 +82,35 @@
     coverView.userInteractionEnabled = NO;
     coverView.backgroundColor = [UIColor clearColor];
     
-    UIView *topCover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, (self.frameHeight - 320)/2 )];
+    UIView *topCover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, (self.frameHeight - CROP_HEIGHT)/2 )];
     topCover.backgroundColor = COVER_COLOR;
     [coverView addSubview:topCover];
     
-    UIView *bottomCover = [[UIView alloc] initWithFrame:CGRectMake(0, self.frameHeight/2 +  320/2, 320, (self.frameHeight - 320)/2)];
+    UIView *bottomCover = [[UIView alloc] initWithFrame:CGRectMake(0, self.frameHeight/2 +  CROP_HEIGHT/2, 320, (self.frameHeight - CROP_HEIGHT)/2)];
     bottomCover.backgroundColor = COVER_COLOR;
     [coverView addSubview:bottomCover];
     
-    UIView *topLine = [[UIView alloc] initWithFrame:CGRectMake(0, topCover.frameHeight, 320, 2)];
+    UIView *leftCover = [[UIView alloc] initWithFrame:CGRectMake(0, topCover.frameHeight, (self.frameWidth - CROP_WIDTH)/2, self.frameHeight - topCover.frameHeight - bottomCover.frameHeight)];
+    leftCover.backgroundColor = COVER_COLOR;
+    [coverView addSubview:leftCover];
+    
+    UIView *rightCover = [[UIView alloc] initWithFrame:CGRectMake(leftCover.frameWidth + CROP_WIDTH, topCover.frameHeight, (self.frameWidth - CROP_WIDTH)/2, self.frameHeight - topCover.frameHeight - bottomCover.frameHeight)];
+    rightCover.backgroundColor = COVER_COLOR;
+    [coverView addSubview:rightCover];
+    
+    UIView *topLine = [[UIView alloc] initWithFrame:CGRectMake(leftCover.frameWidth, topCover.frameHeight, CROP_WIDTH, 2)];
     topLine.backgroundColor = LINE_COLOR;
     [coverView addSubview:topLine];
     
-    UIView *rightLine = [[UIView alloc] initWithFrame:CGRectMake(320 - 2, topCover.frameHeight, 2, 320)];
+    UIView *rightLine = [[UIView alloc] initWithFrame:CGRectMake(rightCover.frameX - 2, topCover.frameHeight, 2, CROP_HEIGHT)];
     rightLine.backgroundColor = LINE_COLOR;
     [coverView addSubview:rightLine];
     
-    UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, topCover.frameHeight + 320 - 2, 320, 2)];
+    UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectMake(leftCover.frameWidth, topCover.frameHeight + CROP_HEIGHT - 2, CROP_WIDTH, 2)];
     bottomLine.backgroundColor = LINE_COLOR;
     [coverView addSubview:bottomLine];
     
-    UIView *leftLine = [[UIView alloc] initWithFrame:CGRectMake(0, topCover.frameHeight, 2, 320)];
+    UIView *leftLine = [[UIView alloc] initWithFrame:CGRectMake(leftCover.frameWidth, topCover.frameHeight, 2, CROP_HEIGHT)];
     leftLine.backgroundColor = LINE_COLOR;
     [coverView addSubview:leftLine];
     
