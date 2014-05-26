@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-PonyDebugger.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RegexKitLite.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,6 +30,11 @@
 			<false/>
 		</dict>
 		<key>Pods-SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SocketRocket.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,37 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>22255EA74AC444749D6EE133</key>
+		<key>02BF3DFB4B4D4A8EB8366A66</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5B2460F914A94F41811EE219</key>
+		<key>0DB7812B68F542BF88D05D5F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>774842596BC74E4EB1323F96</key>
+		<key>3848417003724A569E58C0C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A698DAF076D04B0C8EF1E8CA</key>
+		<key>4F7F0E4E12C74A3181A5081D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9FF17AFFD4A4DD999BB60FA</key>
+		<key>50BDF572FD934DFC9AEBCF73</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD83B109FE7D414089FA0958</key>
+		<key>C14C7C9D34D243358C316F25</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F308AC731E56459B8C5A8697</key>
+		<key>DBE2A7C013914C60BC6103CD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E4D3CAC4D0A34FDA80CE648F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E6A79C5928CF4DFF981DFBBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

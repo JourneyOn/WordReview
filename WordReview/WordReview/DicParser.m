@@ -33,47 +33,56 @@
 {
     WRWordDic *wordDic = [[self alloc] init];
 
-    wordDic.word = [[dic objectForKey:@"simple"] objectForKey:@"query"];
-    wordDic.englishPronounce = [[[[dic objectForKey:@"simple"] objectForKey:@"word"] firstObject] objectForKey:@"ukphone"];
-    wordDic.americaPronounce = [[[[dic objectForKey:@"simple"] objectForKey:@"word"] firstObject] objectForKey:@"usphone"];
-    
-    NSURL *ukPronounceURL = [NSURL URLWithString:[NSString stringWithFormat:[[DataModelManager sharedInstance] getServerByKey:SERVER_YOUDAO_PRONOUNCE_ENGLISH],(NSString *)[[[[dic objectForKey:@"simple"] objectForKey:@"word"] firstObject] objectForKey:@"ukspeech"]]];
-    wordDic.englishPronounceVoiceData = [NSData dataWithContentsOfURL:ukPronounceURL];
-    
-    NSURL *usPronounceURL = [NSURL URLWithString:[NSString stringWithFormat:[[DataModelManager sharedInstance] getServerByKey:SERVER_YOUDAO_PRONOUNCE_AMERICA],(NSString *)[[[[dic objectForKey:@"simple"] objectForKey:@"word"] firstObject] objectForKey:@"usspeech"]]];
-    wordDic.americaPronouceVoiceData = [NSData dataWithContentsOfURL:usPronounceURL];
-    
-    wordDic.collinsPronounce = [[[[dic objectForKey:@"collins"] objectForKey:@"collins_entries"] firstObject] objectForKey:@"phonetic"];
-    
-    NSMutableArray *entryArray = [NSMutableArray array];
-    NSArray *entries = [[[[[dic objectForKey:@"collins"] objectForKey:@"collins_entries"] firstObject] objectForKey:@"entries"] objectForKey:@"entry"];
-    for (NSDictionary *entryDic in entries) {
-        NSMutableDictionary *parseEntryDic = [NSMutableDictionary dictionary];
+    @try {
+
+        wordDic.word = [[dic objectForKey:@"simple"] objectForKey:@"query"];
+        wordDic.englishPronounce = [[[[dic objectForKey:@"simple"] objectForKey:@"word"] firstObject] objectForKey:@"ukphone"];
+        wordDic.americaPronounce = [[[[dic objectForKey:@"simple"] objectForKey:@"word"] firstObject] objectForKey:@"usphone"];
         
-        // parse desc
-        NSString *entryDesc = [[[[entryDic objectForKey:@"tran_entry"] firstObject] objectForKey:@"pos_entry"] objectForKey:@"pos"];
-        entryDesc = [entryDesc stringByAppendingFormat:@" %@", [[[entryDic objectForKey:@"tran_entry"] firstObject] objectForKey:@"tran"]];
-        entryDesc = [entryDesc stringByAppendingFormat:@" %@",[[[entryDic objectForKey:@"tran_entry"] firstObject] objectForKey:@"box_extra"]];
-        entryDesc = [entryDesc trimHtmlTag];
+        NSURL *ukPronounceURL = [NSURL URLWithString:[NSString stringWithFormat:[[DataModelManager sharedInstance] getServerByKey:SERVER_YOUDAO_PRONOUNCE_ENGLISH],(NSString *)[[[[dic objectForKey:@"simple"] objectForKey:@"word"] firstObject] objectForKey:@"ukspeech"]]];
+        wordDic.englishPronounceVoiceData = [NSData dataWithContentsOfURL:ukPronounceURL];
         
-        [parseEntryDic setObject:entryDesc forKey:ENTRY_DESCRIPTION];
+        NSURL *usPronounceURL = [NSURL URLWithString:[NSString stringWithFormat:[[DataModelManager sharedInstance] getServerByKey:SERVER_YOUDAO_PRONOUNCE_AMERICA],(NSString *)[[[[dic objectForKey:@"simple"] objectForKey:@"word"] firstObject] objectForKey:@"usspeech"]]];
+        wordDic.americaPronouceVoiceData = [NSData dataWithContentsOfURL:usPronounceURL];
         
+        wordDic.collinsPronounce = [[[[dic objectForKey:@"collins"] objectForKey:@"collins_entries"] firstObject] objectForKey:@"phonetic"];
         
-        // parse example
-        NSString *example = [[[[[[entryDic objectForKey:@"tran_entry"] firstObject] objectForKey:@"exam_sents"] objectForKey:@"sent"] firstObject] objectForKey:@"eng_sent"];
-        [parseEntryDic setObject:example forKey:ENTRY_EXAMPLE];
-        
-        
-        // parse example explain
-        NSString *explain = [[[[[[entryDic objectForKey:@"tran_entry"] firstObject] objectForKey:@"exam_sents"] objectForKey:@"sent"] firstObject] objectForKey:@"chn_sent"];
-        [parseEntryDic setObject:explain forKey:ENTRY_EXPLAIN];
-        
-        
-        [entryArray addObject:parseEntryDic];
+        NSMutableArray *entryArray = [NSMutableArray array];
+        NSArray *entries = [[[[[dic objectForKey:@"collins"] objectForKey:@"collins_entries"] firstObject] objectForKey:@"entries"] objectForKey:@"entry"];
+        for (NSDictionary *entryDic in entries) {
+            NSMutableDictionary *parseEntryDic = [NSMutableDictionary dictionary];
+            
+            // parse desc
+            NSString *entryDesc = [[[[entryDic objectForKey:@"tran_entry"] firstObject] objectForKey:@"pos_entry"] objectForKey:@"pos"];
+            entryDesc = [entryDesc stringByAppendingFormat:@" %@", [[[entryDic objectForKey:@"tran_entry"] firstObject] objectForKey:@"tran"]];
+            entryDesc = [entryDesc stringByAppendingFormat:@" %@",[[[entryDic objectForKey:@"tran_entry"] firstObject] objectForKey:@"box_extra"]];
+            entryDesc = [entryDesc trimHtmlTag];
+            
+            [parseEntryDic setObject:entryDesc forKey:ENTRY_DESCRIPTION];
+            
+            
+            // parse example
+            NSString *example = [[[[[[entryDic objectForKey:@"tran_entry"] firstObject] objectForKey:@"exam_sents"] objectForKey:@"sent"] firstObject] objectForKey:@"eng_sent"];
+            [parseEntryDic setObject:example forKey:ENTRY_EXAMPLE];
+            
+            
+            // parse example explain
+            NSString *explain = [[[[[[entryDic objectForKey:@"tran_entry"] firstObject] objectForKey:@"exam_sents"] objectForKey:@"sent"] firstObject] objectForKey:@"chn_sent"];
+            [parseEntryDic setObject:explain forKey:ENTRY_EXPLAIN];
+            
+            
+            [entryArray addObject:parseEntryDic];
+        }
+        wordDic.entries = [NSArray arrayWithArray:entryArray];
     }
-    wordDic.entries = [NSArray arrayWithArray:entryArray];
+    @catch (NSException *exception) {
+        NSLog(@"%@", exception);
+    }
+    @finally {
+    }
     
     return wordDic;
+
 }
 @end
 

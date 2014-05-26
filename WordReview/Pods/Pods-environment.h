@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_AVOSCloud 5
 #define COCOAPODS_VERSION_PATCH_AVOSCloud 2
 
+// PonyDebugger
+#define COCOAPODS_POD_AVAILABLE_PonyDebugger
+#define COCOAPODS_VERSION_MAJOR_PonyDebugger 0
+#define COCOAPODS_VERSION_MINOR_PonyDebugger 3
+#define COCOAPODS_VERSION_PATCH_PonyDebugger 1
+
 // RegexKitLite
 #define COCOAPODS_POD_AVAILABLE_RegexKitLite
 #define COCOAPODS_VERSION_MAJOR_RegexKitLite 4
@@ -77,6 +83,12 @@
 #define COCOAPODS_VERSION_MAJOR_SVProgressHUD 1
 #define COCOAPODS_VERSION_MINOR_SVProgressHUD 0
 #define COCOAPODS_VERSION_PATCH_SVProgressHUD 0
+
+// SocketRocket
+#define COCOAPODS_POD_AVAILABLE_SocketRocket
+#define COCOAPODS_VERSION_MAJOR_SocketRocket 0
+#define COCOAPODS_VERSION_MINOR_SocketRocket 3
+#define COCOAPODS_VERSION_PATCH_SocketRocket 1
 
 // SparkInspector
 #define COCOAPODS_POD_AVAILABLE_SparkInspector

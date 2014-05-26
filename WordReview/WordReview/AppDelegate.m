@@ -14,14 +14,16 @@
 #import "HomeViewController.h"
 #import "ProfileViewController.h"
 
+#import <PonyDebugger/PonyDebugger.h>
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    
+#if DEBUG
+//    [self setupDebug];
+#endif
     
     [self setupDataModelWithLaunchOptions:launchOptions];
     [self setupRootView];
@@ -59,6 +61,17 @@
 }
 
 #pragma mark - Process
+- (void)setupDebug
+{
+    PDDebugger *debugger = [PDDebugger defaultInstance];
+    [debugger autoConnect];
+    [debugger enableNetworkTrafficDebugging];
+    [debugger forwardAllNetworkTraffic];
+    [debugger enableRemoteLogging];
+    [debugger enableViewHierarchyDebugging];
+    
+}
+
 - (void)setupDataModelWithLaunchOptions:(NSDictionary *)option
 {
     [[DataModelManager sharedInstance] setupAVOSCloudWithLaunchOpltions:option];
@@ -66,6 +79,11 @@
 
 - (void)setupRootView
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     /*
      NAV -> TAB -> NAV -> Home
                 -> NAV -> Profile

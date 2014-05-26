@@ -16,7 +16,7 @@
 
 #import "DataModelManager.h"
 #import "DicParser.h"
-@interface AddViewController () <UITextFieldDelegate, UITextViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AddViewController () <UITextFieldDelegate, UITextViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, DicViewControllerDelegate>
 {
     __weak IBOutlet UITextField *_wordTextField;
     __weak IBOutlet PlaceholderTextView *_descriptionTextView;
@@ -24,6 +24,9 @@
     __weak IBOutlet UILabel *_addImageLabel;
     __weak IBOutlet UIButton *showDicBtn;
     __weak IBOutlet UIActivityIndicatorView *activityIndicator;
+    
+    
+    WRWordDic *_wordDic;
     
 }
 @end
@@ -157,21 +160,11 @@
 - (IBAction)showDicBtnPressed:(UIButton *)sender {
     NSString *word = [_wordTextField.text trimedForWord];
     if (word.length) {
-//        [sender setTitle:@"" forState:UIControlStateNormal];
-//        sender.enabled = NO;
-//        activityIndicator.hidden = NO;
-//        [activityIndicator startAnimating];
-//        
-//        NSString *urlStr = [NSString stringWithFormat:[[DataModelManager sharedInstance] getServerByKey:SERVER_YOUDAO_COLLINS], word];
-//        urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//        [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            WRWordDic *wordDic = [WRWordDic wordDicWithYouDaoDic:responseObject];
-//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//            
-//        }];
-        
         DicViewController *dicVC = [[DicViewController alloc] initWithWord:word];
+        dicVC.delegate = self;
+        if (_wordDic) {
+            [dicVC setWordDic:_wordDic];
+        }
         [self.navigationController pushViewController:dicVC animated:YES];
     }
     else{
@@ -229,5 +222,10 @@
         [self presentViewController:nav animated:YES completion:nil];
     }];
 
+}
+
+#pragma mark - Dic VC
+- (void)dicViewControllerDidLoadDic:(WRWordDic *)wordDic{
+    _wordDic = wordDic;
 }
 @end

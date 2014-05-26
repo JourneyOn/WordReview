@@ -185,10 +185,10 @@
 				521BC6E4191B235300ECED6B /* AddViewController.h */,
 				521BC6E5191B235300ECED6B /* AddViewController.m */,
 				521BC6E8191B730700ECED6B /* AddViewController.xib */,
-				520A5EA0191C8668009627C0 /* ImageCropperViewController.h */,
-				520A5EA1191C8668009627C0 /* ImageCropperViewController.m */,
 				52A574C01924BC5800825203 /* DicViewController.h */,
 				52A574C11924BC5800825203 /* DicViewController.m */,
+				520A5EA0191C8668009627C0 /* ImageCropperViewController.h */,
+				520A5EA1191C8668009627C0 /* ImageCropperViewController.m */,
 			);
 			name = "Second Level VC";
 			sourceTree = "<group>";
@@ -200,6 +200,8 @@
 				520A5E9E191C84A0009627C0 /* ImageCropperView.m */,
 				521BC6ED191B7D2000ECED6B /* PlaceholderTextView.h */,
 				521BC6EE191B7D2000ECED6B /* PlaceholderTextView.m */,
+				52A574C51924C2B300825203 /* DicCell.h */,
+				52A574C61924C2B300825203 /* DicCell.m */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -215,8 +217,6 @@
 				520A5EA6191C879F009627C0 /* WRWord.m */,
 				52F397DC1921EF7B00AD0A4D /* WRWordDic.h */,
 				52F397DD1921EF7B00AD0A4D /* WRWordDic.m */,
-				52A574C51924C2B300825203 /* DicCell.h */,
-				52A574C61924C2B300825203 /* DicCell.m */,
 				52F397E21921FAB400AD0A4D /* Parser */,
 			);
 			name = DataModel;
@@ -362,6 +362,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = John;
 				TargetAttributes = {
+					528DE9BB1915F214007302C5 = {
+						DevelopmentTeam = 3R645USKX8;
+					};
 					528DE9D61915F214007302C5 = {
 						TestTargetID = 528DE9BB1915F214007302C5;
 					};
@@ -585,10 +588,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WordReview/WordReview-Prefix.pch";
 				INFOPLIST_FILE = "WordReview/WordReview-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -599,10 +605,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WordReview/WordReview-Prefix.pch";
 				INFOPLIST_FILE = "WordReview/WordReview-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -1,5 +1,6 @@
 platform :ios, '6.0'
 
+pod 'PonyDebugger', '0.3.1'
 pod 'SparkInspector', '1.2.2'
 pod 'AVOSCloud', '2.5.2'
 pod 'SVProgressHUD', '1.0'
