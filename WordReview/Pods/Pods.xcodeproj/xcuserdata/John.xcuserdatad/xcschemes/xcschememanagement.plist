@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PonyDebugger.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>02BF3DFB4B4D4A8EB8366A66</key>
+		<key>484AFEA728804B22A6C89250</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0DB7812B68F542BF88D05D5F</key>
+		<key>49F5C15594204D598B91DBDC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3848417003724A569E58C0C8</key>
+		<key>6C7197B752B043ECA16ACD7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4F7F0E4E12C74A3181A5081D</key>
+		<key>81FA20D1734C4A7DA730D4CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>50BDF572FD934DFC9AEBCF73</key>
+		<key>84C47639665B408793B84609</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C14C7C9D34D243358C316F25</key>
+		<key>A2E4042039D04FAE9B4C0F7D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DBE2A7C013914C60BC6103CD</key>
+		<key>AA9B9D1FC1694F528891ACE3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E4D3CAC4D0A34FDA80CE648F</key>
+		<key>AD1EC2E31EB04FA58848AF00</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E6A79C5928CF4DFF981DFBBC</key>
+		<key>B7773473C8E449128C959A92</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C690B2F1E2D64F93983C1EC3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WRWord.h"
 
-@interface AddViewController : UIViewController
+@class AddViewController;
+@protocol AddViewControllerDelegate <NSObject>
+
+- (void)addViewController:(AddViewController *)vc didSaveWord:(WRWord *)word;
 
 @end
+
+
+@interface AddViewController : UIViewController
+@property (weak, nonatomic) id<AddViewControllerDelegate> delegate;
+@end
+
+

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4F7F0E4E12C74A3181A5081D"
+               BlueprintIdentifier = "484AFEA728804B22A6C89250"
                BuildableName = "libPods-SparkInspector.a"
                BlueprintName = "Pods-SparkInspector"
                ReferencedContainer = "container:Pods.xcodeproj">

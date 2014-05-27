@@ -25,6 +25,7 @@
     __weak IBOutlet UIButton *showDicBtn;
     __weak IBOutlet UIActivityIndicatorView *activityIndicator;
     
+    UIBarButtonItem *_saveBtn;
     
     WRWordDic *_wordDic;
     
@@ -61,9 +62,10 @@
     self.title = @"Add New Word";
     
     UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelBtnPressed:)];
-    UIBarButtonItem *saveBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveBtnPressed:)];
+    _saveBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveBtnPressed:)];
+    _saveBtn.enabled = NO;
     self.navigationItem.leftBarButtonItem = cancelBtn;
-    self.navigationItem.rightBarButtonItems = @[saveBtn];
+    self.navigationItem.rightBarButtonItems = @[_saveBtn];
     
     _wordTextField.layer.masksToBounds = YES;
     _wordTextField.layer.cornerRadius = 8.f;
@@ -87,6 +89,7 @@
     
     [_addImageLabel setAttributedText:[[NSAttributedString alloc] initWithString:@"Add Photo" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17], NSUnderlineStyleAttributeName: @1}]];
     
+    showDicBtn.enabled = NO;
     showDicBtn.layer.masksToBounds = YES;
     showDicBtn.layer.cornerRadius = 8.f;
     showDicBtn.layer.borderWidth = 1.f;
@@ -127,17 +130,19 @@
     [SVProgressHUD showWithStatus:@"saving..."];
     [word saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
+            // when we add a relationship to user, the user data will automaticly upload to server.
+            AVRelation *words = currentUser.words;
+            if (words == nil) {
+                currentUser.words = [AVRelation new];
+                words = currentUser.words;
+            }
             [currentUser.words addObject:word];
-
-            [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (succeeded) {
-                    [SVProgressHUD showSuccessWithStatus:@"Success!"];
-                    [self dismissViewControllerAnimated:YES completion:nil];
-                }
-                else{
-                    [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
-                }
-            }];
+            
+            if ([self.delegate respondsToSelector:@selector(addViewController:didSaveWord:)]) {
+                [self.delegate addViewController:self didSaveWord:word];
+            }
+            [SVProgressHUD showSuccessWithStatus:@"Success!"];
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
         else{
             [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
@@ -176,6 +181,21 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSString *newStr = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    if (newStr.length) {
+        _saveBtn.enabled = YES;
+        showDicBtn.enabled = YES;
+    }
+    else{
+        _saveBtn.enabled = NO;
+        showDicBtn.enabled = NO;
+    }
+    
     return YES;
 }
 
