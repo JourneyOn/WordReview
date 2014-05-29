@@ -23,9 +23,9 @@
     __weak IBOutlet UIImageView *_imageView;
     __weak IBOutlet UILabel *_addImageLabel;
     __weak IBOutlet UIButton *showDicBtn;
-    __weak IBOutlet UIActivityIndicatorView *activityIndicator;
     
     UIBarButtonItem *_saveBtn;
+    UIBarButtonItem *_dicBtn;
     
     WRWordDic *_wordDic;
     
@@ -64,8 +64,10 @@
     UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelBtnPressed:)];
     _saveBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveBtnPressed:)];
     _saveBtn.enabled = NO;
+    _dicBtn = [[UIBarButtonItem alloc] initWithTitle:@"Dic." style:UIBarButtonItemStylePlain target:self action:@selector(dicBtnPressed:)];
+    _dicBtn.enabled = NO;
     self.navigationItem.leftBarButtonItem = cancelBtn;
-    self.navigationItem.rightBarButtonItems = @[_saveBtn];
+    self.navigationItem.rightBarButtonItems = @[_saveBtn, _dicBtn];
     
     _wordTextField.layer.masksToBounds = YES;
     _wordTextField.layer.cornerRadius = 8.f;
@@ -75,9 +77,10 @@
     [_descriptionTextView setPlaceholder:@"The original source"];
     
     UIToolbar *bar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
-//    UIBarButtonItem *flexibleBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *flexibleBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *clearBtn = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonItemStylePlain target:self action:@selector(keyboardClearBtnPressed:)];
     UIBarButtonItem *keyboardDoneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(keyboardDoneBtnPressed:)];
-    [bar setItems:@[keyboardDoneBtn]];
+    [bar setItems:@[keyboardDoneBtn, flexibleBtn, clearBtn]];
     _wordTextField.inputAccessoryView = bar;
     _descriptionTextView.inputAccessoryView = bar;
     
@@ -89,11 +92,24 @@
     
     [_addImageLabel setAttributedText:[[NSAttributedString alloc] initWithString:@"Add Photo" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17], NSUnderlineStyleAttributeName: @1}]];
     
+    /*
     showDicBtn.enabled = NO;
     showDicBtn.layer.masksToBounds = YES;
     showDicBtn.layer.cornerRadius = 8.f;
     showDicBtn.layer.borderWidth = 1.f;
     showDicBtn.layer.borderColor = [[UIColor darkGrayColor] CGColor];
+     */
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        if (![_wordTextField isFirstResponder]) {
+            [_wordTextField becomeFirstResponder];
+//        }
+//    });
 }
 
 - (void)didReceiveMemoryWarning
@@ -130,19 +146,24 @@
     [SVProgressHUD showWithStatus:@"saving..."];
     [word saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            // when we add a relationship to user, the user data will automaticly upload to server.
-            AVRelation *words = currentUser.words;
-            if (words == nil) {
-                currentUser.words = [AVRelation new];
-                words = currentUser.words;
-            }
+
             [currentUser.words addObject:word];
+            [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    if ([self.delegate respondsToSelector:@selector(addViewController:didSaveWord:)]) {
+                        [self.delegate addViewController:self didSaveWord:word];
+                    }
+                    [SVProgressHUD showSuccessWithStatus:@"Success!"];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }
+                else
+                {
+                    [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
+                }
+                
+            }];
             
-            if ([self.delegate respondsToSelector:@selector(addViewController:didSaveWord:)]) {
-                [self.delegate addViewController:self didSaveWord:word];
-            }
-            [SVProgressHUD showSuccessWithStatus:@"Success!"];
-            [self dismissViewControllerAnimated:YES completion:nil];
+
         }
         else{
             [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
@@ -155,6 +176,19 @@
 {
     [_wordTextField resignFirstResponder];
     [_descriptionTextView resignFirstResponder];
+}
+
+- (void)keyboardClearBtnPressed:(id)sender
+{
+    if ([_wordTextField isFirstResponder]) {
+        _wordTextField.text = @"";
+        _dicBtn.enabled = NO;
+        _saveBtn.enabled = NO;
+    }
+    else if ([_descriptionTextView isFirstResponder]) {
+        _descriptionTextView.text = @"";
+    }
+    
 }
 
 - (IBAction)imageViewTapped:(UITapGestureRecognizer *)sender {
@@ -189,11 +223,11 @@
     NSString *newStr = [textField.text stringByReplacingCharactersInRange:range withString:string];
     if (newStr.length) {
         _saveBtn.enabled = YES;
-        showDicBtn.enabled = YES;
+        _dicBtn.enabled = YES;
     }
     else{
         _saveBtn.enabled = NO;
-        showDicBtn.enabled = NO;
+        _dicBtn.enabled = NO;
     }
     
     return YES;

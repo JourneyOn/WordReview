@@ -10,7 +10,7 @@
 
 @implementation WRUser
 
-//@dynamic words;
+@dynamic words;
 
 + (NSString *)parseClassName
 {

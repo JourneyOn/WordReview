@@ -130,7 +130,7 @@
                 [_refreshIndicator stopAnimating];
                 _refreshIndicator.hidden = YES;
                 if (error) {
-//                    [SVProgressHUD showErrorWithStatus:@"Sync Error!"];
+                    [SVProgressHUD showErrorWithStatus:@"Sync Error!"];
                 }
                 else{
                     _wordsCopy = [NSMutableArray arrayWithArray:objects];
