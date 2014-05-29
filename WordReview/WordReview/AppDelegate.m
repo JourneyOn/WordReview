@@ -26,6 +26,7 @@
 #endif
     
     [self setupDataModelWithLaunchOptions:launchOptions];
+    [self setupCache];
     [self setupRootView];
     
     [self doLoginProcess];
@@ -75,6 +76,11 @@
 - (void)setupDataModelWithLaunchOptions:(NSDictionary *)option
 {
     [[DataModelManager sharedInstance] setupAVOSCloudWithLaunchOpltions:option];
+}
+
+- (void)setupCache
+{
+    [[DataModelManager sharedInstance] setupCache];
 }
 
 - (void)setupRootView

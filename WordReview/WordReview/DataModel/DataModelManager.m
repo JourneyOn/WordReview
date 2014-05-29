@@ -11,6 +11,10 @@
 #import "WRWord.h"
 #import "WRWordDic.h"
 
+
+#import <FMDB/FMDatabase.h>
+#import <FMDB/FMDatabaseQueue.h>
+
 #define APP_ID      @"loob22bkczn4jbu955ly40oyjftm0lpnwt1u2le1q496yp88"
 #define APP_KEY     @"9q8dfbph01jnrasna0ek9y7ojn65n5l4yy298ufab5d6bv2s"
 
@@ -20,6 +24,7 @@ static id sharedInstance;
 @interface DataModelManager ()
 {
     NSDictionary *_serverDic;
+    FMDatabaseQueue *_dbQueue;
 }
 @end
 
@@ -50,6 +55,8 @@ static id sharedInstance;
     [AVAnalytics trackAppOpenedWithLaunchOptions:option];
 }
 
+
+
 - (void)initAVSubClass
 {
     [WRUser registerSubclass];
@@ -61,4 +68,61 @@ static id sharedInstance;
 {
     return [_serverDic objectForKey:key];
 }
+
+
+
+/**********    IMG & DIC DATABASE     **********/
+- (void)setupCache
+{
+    // setup queue
+    NSString *dbDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *dbPath = [dbDir stringByAppendingPathComponent:@"user.sqlite"];
+    _dbQueue = [[FMDatabaseQueue alloc] initWithPath:dbPath];
+    
+    
+    // setup table
+    [_dbQueue inDatabase:^(FMDatabase *db) {
+        if ([db open]) {
+            NSString *sql = @"CREATE TABLE IF NOT EXISTS 'IMG' ('img_id' VARCHAR(30) PRIMARY KEY, 'img_path' VARCHAR(30))";
+            BOOL res = [db executeUpdate:sql];
+            if (!res) {
+                NSLog(@"error when create IMG table");
+            }
+            
+            sql = @"CREATE TABLE IF NOT EXISTS 'Dic' ('dic_word' VARCHAR(30), 'dic_json' VARCHAR(500))";
+            res = [db executeUpdate:sql];
+            if (!res) {
+                NSLog(@"error when create DIC table");
+            }
+        }
+    }];
+}
+
+/*
+- (NSString *)getImagePathForImageID:(NSString *)imageID
+{
+    [_dbQueue inDatabase:^(FMDatabase *db) {
+        NSString *sql = @"select * from IMG where img_id = ?";
+        FMResultSet *rs = [db executeQuery:sql,imageID];
+        
+    }];
+    
+}
+
+- (NSString *)setImagePathToImageID:(NSString *)imageID
+{
+    
+}
+
+- (NSString *)getDicJsonForWord:(NSString *)word
+{
+    
+}
+
+- (NSString *)setDicJsonForWord:(NSString *)word
+{
+    
+}
+
+ */
 @end
