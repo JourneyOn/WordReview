@@ -22,6 +22,10 @@
 		522212691919DF2C00083ADB /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522212681919DF2C00083ADB /* SignUpViewController.m */; };
 		5222126D1919E8E800083ADB /* UIView+Position.m in Sources */ = {isa = PBXBuildFile; fileRef = 5222126C1919E8E800083ADB /* UIView+Position.m */; };
 		52221270191A2B9800083ADB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5222126F191A2B9800083ADB /* SettingsViewController.m */; };
+		5259B83419386CDF009E63C7 /* libReveal.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 5259B83319386CDA009E63C7 /* libReveal.dylib */; };
+		5259B83619386D0F009E63C7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5259B83519386D0F009E63C7 /* CFNetwork.framework */; };
+		5259B83819386D1E009E63C7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5259B83719386D1E009E63C7 /* QuartzCore.framework */; };
+		5259B83B19386FA9009E63C7 /* RevealUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5259B83A19386FA9009E63C7 /* RevealUtil.m */; };
 		528DE9C01915F214007302C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528DE9BF1915F214007302C5 /* Foundation.framework */; };
 		528DE9C21915F214007302C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528DE9C11915F214007302C5 /* CoreGraphics.framework */; };
 		528DE9C41915F214007302C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528DE9C31915F214007302C5 /* UIKit.framework */; };
@@ -83,6 +87,12 @@
 		5222126C1919E8E800083ADB /* UIView+Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Position.m"; sourceTree = "<group>"; };
 		5222126E191A2B9800083ADB /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		5222126F191A2B9800083ADB /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		5259B83219386C56009E63C7 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		5259B83319386CDA009E63C7 /* libReveal.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libReveal.dylib; sourceTree = "<group>"; };
+		5259B83519386D0F009E63C7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5259B83719386D1E009E63C7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5259B83919386FA9009E63C7 /* RevealUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RevealUtil.h; path = WordReview/RevealUtil.h; sourceTree = "<group>"; };
+		5259B83A19386FA9009E63C7 /* RevealUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RevealUtil.m; path = WordReview/RevealUtil.m; sourceTree = "<group>"; };
 		528DE9BC1915F214007302C5 /* WordReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528DE9BF1915F214007302C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		528DE9C11915F214007302C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -123,6 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5259B83819386D1E009E63C7 /* QuartzCore.framework in Frameworks */,
+				5259B83619386D0F009E63C7 /* CFNetwork.framework in Frameworks */,
 				528DE9C21915F214007302C5 /* CoreGraphics.framework in Frameworks */,
 				528DE9C41915F214007302C5 /* UIKit.framework in Frameworks */,
 				528DE9C01915F214007302C5 /* Foundation.framework in Frameworks */,
@@ -222,6 +234,17 @@
 			name = DataModel;
 			sourceTree = "<group>";
 		};
+		5259B83C19388441009E63C7 /* Crack */ = {
+			isa = PBXGroup;
+			children = (
+				5259B83919386FA9009E63C7 /* RevealUtil.h */,
+				5259B83A19386FA9009E63C7 /* RevealUtil.m */,
+				5259B83319386CDA009E63C7 /* libReveal.dylib */,
+				5259B83219386C56009E63C7 /* Reveal.framework */,
+			);
+			name = Crack;
+			sourceTree = "<group>";
+		};
 		528DE9B31915F214007302C5 = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +256,7 @@
 				528DE9BE1915F214007302C5 /* Frameworks */,
 				528DE9BD1915F214007302C5 /* Products */,
 				C85648C8211644B689A86950 /* Pods.xcconfig */,
+				5259B83C19388441009E63C7 /* Crack */,
 			);
 			sourceTree = "<group>";
 		};
@@ -248,6 +272,8 @@
 		528DE9BE1915F214007302C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5259B83719386D1E009E63C7 /* QuartzCore.framework */,
+				5259B83519386D0F009E63C7 /* CFNetwork.framework */,
 				528DE9BF1915F214007302C5 /* Foundation.framework */,
 				528DE9C11915F214007302C5 /* CoreGraphics.framework */,
 				528DE9C31915F214007302C5 /* UIKit.framework */,
@@ -393,6 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5259B83419386CDF009E63C7 /* libReveal.dylib in Resources */,
 				528DE9CA1915F214007302C5 /* InfoPlist.strings in Resources */,
 				52213DD6191F29F700486CE7 /* word_review@2x.png in Resources */,
 				52213DD5191F29F700486CE7 /* profile@2x.png in Resources */,
@@ -461,6 +488,7 @@
 				528DE9CC1915F214007302C5 /* main.m in Sources */,
 				528DE9F01915F3D2007302C5 /* RootTabbarViewController.m in Sources */,
 				520A5EA7191C879F009627C0 /* WRWord.m in Sources */,
+				5259B83B19386FA9009E63C7 /* RevealUtil.m in Sources */,
 				528DE9F31915F3E5007302C5 /* HomeViewController.m in Sources */,
 				522212611919D6C100083ADB /* DataModelManager.m in Sources */,
 				52221270191A2B9800083ADB /* SettingsViewController.m in Sources */,

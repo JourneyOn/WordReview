@@ -1,5 +1,6 @@
 platform :ios, '6.0'
 
+#pod 'Reveal-iOS-SDK', '1.0.4'
 pod 'FMDB', '2.3'
 pod 'PonyDebugger', '0.3.1'
 pod 'SparkInspector', '1.2.2'

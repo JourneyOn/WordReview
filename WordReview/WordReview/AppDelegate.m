@@ -5,6 +5,8 @@
 //  Created by shupeng on 5/4/14.
 //  Copyright (c) 2014 John. All rights reserved.
 //
+#import <dlfcn.h>
+
 
 #import "AppDelegate.h"
 #import "DataModelManager.h"
@@ -22,7 +24,7 @@
 {
     
 #if DEBUG
-//    [self setupDebug];
+    [self setupDebug];
 #endif
     
     [self setupDataModelWithLaunchOptions:launchOptions];
@@ -64,13 +66,34 @@
 #pragma mark - Process
 - (void)setupDebug
 {
-    PDDebugger *debugger = [PDDebugger defaultInstance];
-    [debugger autoConnect];
-    [debugger enableNetworkTrafficDebugging];
-    [debugger forwardAllNetworkTraffic];
-    [debugger enableRemoteLogging];
-    [debugger enableViewHierarchyDebugging];
+//    PDDebugger *debugger = [PDDebugger defaultInstance];
+//    [debugger autoConnect];
+//    [debugger enableNetworkTrafficDebugging];
+//    [debugger forwardAllNetworkTraffic];
+//    [debugger enableRemoteLogging];
+//    [debugger enableViewHierarchyDebugging];
     
+    [self loadReveal];
+    
+}
+
+- (void)loadReveal
+{
+    NSString *revealLibName = @"libReveal";
+    NSString *revealLibExtension = @"dylib";
+    NSString *dyLibPath = [[NSBundle mainBundle] pathForResource:revealLibName ofType:revealLibExtension];
+    NSLog(@"Loading dynamic library: %@", dyLibPath);
+    
+    void *revealLib = NULL;
+    revealLib = dlopen([dyLibPath cStringUsingEncoding:NSUTF8StringEncoding], RTLD_NOW);
+    
+    if (revealLib == NULL)
+    {
+        char *error = dlerror();
+        NSLog(@"dlopen error: %s", error);
+        NSString *message = [NSString stringWithFormat:@"%@.%@ failed to load with error: %s", revealLibName, revealLibExtension, error];
+        [[[UIAlertView alloc] initWithTitle:@"Reveal library could not be loaded" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
 }
 
 - (void)setupDataModelWithLaunchOptions:(NSDictionary *)option
